@@ -75,8 +75,8 @@ modules:
   - name: scrcpy
     buildsystem: meson
     config-opts:
-      - -Dprebuilt_server=/app/share/scrcpy/scrcpy-server
-      - -Dcompile_server=false
+      - -Dprebuilt_server=scrcpy-server
+      - -Dcompile_server=true
       - -Db_lto=true
       - -Dbuildtype=release
     sources:
@@ -87,7 +87,6 @@ modules:
         url: https://github.com/Genymobile/scrcpy/releases/download/v3.3.3/scrcpy-server-v3.3.3
         sha256: 7e70323ba7f259649dd4acce97ac4fefbae8102b2c6d91e2e7be613fd5354be0
         dest-filename: scrcpy-server
-        dest: /app/share/scrcpy
 
   # Main application
   - name: aurynk

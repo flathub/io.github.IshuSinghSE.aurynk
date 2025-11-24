@@ -4,7 +4,6 @@ runtime-version: '49'
 sdk: org.gnome.Sdk
 command: aurynk
 
-
 finish-args:
   # Set scrcpy server path
   - --env=SCRCPY_SERVER_PATH=/app/share/scrcpy/scrcpy-server
@@ -60,6 +59,9 @@ modules:
 
   - python-dependencies.json
 
+  # Use flathub shared-modules for Ayatana AppIndicator
+  - shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json
+
   - name: adb
     buildsystem: simple
     build-commands:
@@ -68,9 +70,6 @@ modules:
       - type: archive
         url: https://dl.google.com/android/repository/platform-tools_r34.0.5-linux.zip
         sha256: 362f8f6218af0f4c61e5aaafb8e255a426c7a0ee00127dfab7371775081d3124
-
-  # Use flathub shared-modules for Ayatana AppIndicator
-  - shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json
 
   # scrcpy - hybrid build: native client + prebuilt server
   - name: scrcpy
@@ -88,12 +87,12 @@ modules:
         url: https://github.com/Genymobile/scrcpy/releases/download/v3.3.3/scrcpy-server-v3.3.3
         sha256: 7e70323ba7f259649dd4acce97ac4fefbae8102b2c6d91e2e7be613fd5354be0
         dest-filename: scrcpy-server
-        dest: share/scrcpy
+        dest: /app/share/scrcpy
 
   # Main application
   - name: aurynk
     buildsystem: meson
     sources:
       - type: archive
-        url: https://github.com/IshuSinghSE/aurynk/releases/download/v1.0.4/aurynk-1.0.4.tar.gz
-        sha256: 918de8fbfa18dd726e4fc3bc33ed48f2e42d01250695b1843289c6f221ca2ed6
+        url: https://github.com/IshuSinghSE/aurynk/releases/download/v1.0.5/aurynk-1.0.5.tar.gz
+        sha256: 3fb5233dc9db03a22f507140c554d7cb51bd8bde3466ef991350869b7f9d9c8d

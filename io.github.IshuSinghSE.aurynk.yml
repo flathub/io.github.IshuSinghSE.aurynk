@@ -93,6 +93,6 @@ modules:
     buildsystem: meson
     sources:
       - type: archive
-        url: https://github.com/IshuSinghSE/aurynk/releases/download/v1.0.5/aurynk-1.0.5.tar.gz
-        sha256: 453b2edf58224f09a3360f0485beeac7c58001751e07884b0746217f679544b4
+        url: https://github.com/IshuSinghSE/aurynk/releases/download/v1.1.0/aurynk-1.1.0.tar.gz
+        sha256: 48e1480eae9223269c7ed73e7fea0c424d76176f627d0f099fbb4ea5e04e53ea
         strip-components: 0

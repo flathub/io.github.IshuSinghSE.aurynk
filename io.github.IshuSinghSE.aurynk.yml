@@ -5,6 +5,8 @@ sdk: org.gnome.Sdk
 command: aurynk
 
 finish-args:
+  # Allow writing to Videos folder for recording
+  - --filesystem=xdg-videos:rw
   # Set scrcpy server path
   - --env=SCRCPY_SERVER_PATH=/app/share/scrcpy/scrcpy-server
   # X11 + XShm access

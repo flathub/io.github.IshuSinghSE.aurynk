@@ -5,6 +5,8 @@ sdk: org.gnome.Sdk
 command: aurynk
 
 finish-args:
+  # Allow writing to Videos folder for recording
+  - --filesystem=xdg-videos:rw
   # Set scrcpy server path
   - --env=SCRCPY_SERVER_PATH=/app/share/scrcpy/scrcpy-server
   # X11 + XShm access
@@ -93,6 +95,6 @@ modules:
     buildsystem: meson
     sources:
       - type: archive
-        url: https://github.com/IshuSinghSE/aurynk/releases/download/v1.0.5/aurynk-1.0.5.tar.gz
-        sha256: a7fa3339e1bbbf3704927f856814aff13306c393cfff807033f794e63650c746
+        url: https://github.com/IshuSinghSE/aurynk/releases/download/v1.1.0/aurynk-1.1.0.tar.gz
+        sha256: 48e1480eae9223269c7ed73e7fea0c424d76176f627d0f099fbb4ea5e04e53ea
         strip-components: 0

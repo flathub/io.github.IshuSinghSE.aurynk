@@ -2,11 +2,13 @@ app-id: io.github.IshuSinghSE.aurynk
 runtime: org.gnome.Platform
 runtime-version: '49'
 sdk: org.gnome.Sdk
-command: aurynk
+command: aurynk-flatpak-wrapper.sh
 
 finish-args:
   # Allow writing to Videos folder for recording
   - --filesystem=xdg-videos:rw
+  # Allow storing udev proxy helper in user's home .local/share (host filesystem)
+  - --filesystem=~/.local/share/aurynk:create
   # Set scrcpy server path
   - --env=SCRCPY_SERVER_PATH=/app/share/scrcpy/scrcpy-server
   # X11 + XShm access
@@ -16,11 +18,19 @@ finish-args:
   - --socket=wayland
   # Network access for ADB wireless
   - --share=network
+  # Allow spawning processes on the host (for udev proxy helper)
+  - --talk-name=org.freedesktop.Flatpak
   # D-Bus access for notifications and system tray
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=org.ayatana.indicator.service
-  # USB device access for ADB
-  - --device=all
+  # Allow access to a single host socket provided by the user helper
+  - --filesystem=xdg-run/aurynk-udev.sock
+  # Fallback: some flatpak-builder versions don't recognize the `xdg-run`
+  # filesystem token. Use the explicit user runtime path as a pragmatic
+  # fallback for local builds. On newer Flatpak installations the
+  # `xdg-run/aurynk-udev.sock` entry will be preferred at runtime.
+  - --filesystem=/run/user/1000/aurynk-udev.sock
+  - --filesystem=/run/user/1000
 
 cleanup:
   - /include
@@ -93,8 +103,11 @@ modules:
   # Main application
   - name: aurynk
     buildsystem: meson
+    post-install:
+      - install -Dm755 flatpak/aurynk-flatpak-wrapper.sh /app/bin/aurynk-flatpak-wrapper.sh
+      - install -Dm755 scripts/aurynk_udev_proxy.py /app/bin/aurynk_udev_proxy.py
     sources:
       - type: archive
-        url: https://github.com/IshuSinghSE/aurynk/releases/download/v1.1.0/aurynk-1.1.0.tar.gz
-        sha256: 48e1480eae9223269c7ed73e7fea0c424d76176f627d0f099fbb4ea5e04e53ea
+        url: https://github.com/IshuSinghSE/aurynk/archive/refs/tags/v1.2.0.tar.gz
+        sha256: cfa0a0e71790770ed0fae2df7bfe748ddac8b7dddcc4eb9017735026480aaf23
         strip-components: 0

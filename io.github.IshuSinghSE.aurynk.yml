@@ -18,8 +18,8 @@ finish-args:
   - --socket=wayland
   # Network access for ADB wireless
   - --share=network
-  # Allow spawning processes on the host (for udev proxy helper)
-  - --talk-name=org.freedesktop.Flatpak
+  # Network access for ADB wireless
+  - --share=network
   # D-Bus access for notifications and system tray
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=org.ayatana.indicator.service

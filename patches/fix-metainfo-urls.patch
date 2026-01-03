@@ -1,0 +1,13 @@
+diff --git a/data/io.github.IshuSinghSE.aurynk.metainfo.xml b/data/io.github.IshuSinghSE.aurynk.metainfo.xml
+index 7a7c6a3..2bcb2c8 100644
+--- a/data/io.github.IshuSinghSE.aurynk.metainfo.xml
++++ b/data/io.github.IshuSinghSE.aurynk.metainfo.xml
+@@
+-  <url type="homepage">https://github.com/IshuSinghSE/aurynk</url>
+-  <url type="bugtracker">https://github.com/IshuSinghSE/aurynk/issues</url>
+-  <url type="translations">https://hosted.weblate.org/engage/aurynk/</url>
++  <url type="homepage">https://github.com/IshuSinghSE/aurynk</url>
++  <url type="bugtracker">https://github.com/IshuSinghSE/aurynk/issues</url>
++  <url type="vcs-browser">https://github.com/IshuSinghSE/aurynk</url>
++  <url type="translate">https://hosted.weblate.org/engage/aurynk/</url>
+   <url type="donation">https://github.com/sponsors/IshuSinghSE</url>

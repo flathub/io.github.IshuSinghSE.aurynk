@@ -95,6 +95,6 @@ modules:
     buildsystem: meson
     sources:
       - type: archive
-        url: https://github.com/IshuSinghSE/aurynk/archive/refs/tags/v1.2.2.tar.gz
-        sha256: e273a85b2fcdc2bfe897b0ff53ff47a00792b086cb3d40b94e597a6c7239c349
+        url: https://github.com/IshuSinghSE/aurynk/archive/refs/tags/v1.3.0.tar.gz
+        sha256: 993d543a6c93a893806df89cb074e66a1e73c7866bb542d546c2da0228187cb8
         strip-components: 1

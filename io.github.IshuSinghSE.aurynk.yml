@@ -16,7 +16,7 @@ finish-args:
   - --share=network
   # D-Bus access for notifications and system tray
   - --talk-name=org.kde.StatusNotifierWatcher
-  - --talk-name=org.ayatana.indicator.service
+  - --talk-name=org.ayatana.indicator.application
   # USB device access for ADB
   - --device=all
   # Allow writing to Videos folder for recording
@@ -96,5 +96,5 @@ modules:
     sources:
       - type: archive
         url: https://github.com/IshuSinghSE/aurynk/archive/refs/tags/v1.3.1.tar.gz
-        sha256: f64eac09562833b56992202e71c824ac8c594da596fe291e103eb3192f1237f5
+        sha256: 9e5bbd62f835175f04966b2761fb0ab649bac96afbf53d87a02593932cc16af5
         strip-components: 1

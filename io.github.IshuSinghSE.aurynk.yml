@@ -1,6 +1,6 @@
 app-id: io.github.IshuSinghSE.aurynk
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: aurynk
 
@@ -96,5 +96,5 @@ modules:
     sources:
       - type: archive
         url: https://github.com/IshuSinghSE/aurynk/archive/refs/tags/v1.3.1.tar.gz
-        sha256: 9e5bbd62f835175f04966b2761fb0ab649bac96afbf53d87a02593932cc16af5
+        sha256: ac032748ac902104d413743cb5689a0160d5b5c4941ef1d8cf5a3b5a4abfb4d0
         strip-components: 1

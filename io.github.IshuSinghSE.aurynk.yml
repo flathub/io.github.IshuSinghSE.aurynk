@@ -1,6 +1,6 @@
 app-id: io.github.IshuSinghSE.aurynk
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: aurynk
 
@@ -16,7 +16,7 @@ finish-args:
   - --share=network
   # D-Bus access for notifications and system tray
   - --talk-name=org.kde.StatusNotifierWatcher
-  - --talk-name=org.ayatana.indicator.service
+  - --talk-name=org.ayatana.indicator.application
   # USB device access for ADB
   - --device=all
   # Allow writing to Videos folder for recording
@@ -95,6 +95,6 @@ modules:
     buildsystem: meson
     sources:
       - type: archive
-        url: https://github.com/IshuSinghSE/aurynk/archive/refs/tags/v1.3.0.tar.gz
-        sha256: 604e1331c023482b158d1f8d5e5a327008e3bef404f0087bf1249ec9471a4c8c
+        url: https://github.com/IshuSinghSE/aurynk/archive/refs/tags/v1.3.1.tar.gz
+        sha256: 9ffb00871539bd9b81a667b30e10be3834dc9121abc54235243915138ef0a6a4
         strip-components: 1

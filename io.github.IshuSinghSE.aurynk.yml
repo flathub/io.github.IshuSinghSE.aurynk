@@ -15,6 +15,7 @@ finish-args:
   # Network access for ADB wireless
   - --share=network
   # D-Bus access for notifications and system tray
+  - --own-name=org.freedesktop.StatusNotifierItem-2-1
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=org.ayatana.indicator.application
   # USB device access for ADB
